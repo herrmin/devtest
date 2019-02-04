@@ -2,7 +2,7 @@
 주문서수집기
 Nodejs 서비스를 위한 사전준비
 
-nodejs 설치 다운로드
+nodejs 설치 다운로드 https://nodejs.org/ko/
 
 설치 후 터미널에서 #npm -v ---버전확인
 
