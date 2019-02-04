@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Order List</title>
+  </head>
+  <body>
+    <script>//ajax 변수지정
+    var queue = new Array();
+    var request;
+
+    createRequest();
+
+    function readData(data){
+      JSON2Table(document.getElementByld("listTable"),"list",result);
+    }
+
+    //JSON 데이터를 테이블로 변환
+    function JSON2Table(table, name, result){
+      //헤더추가
+      if(table.tHead == null){
+        var thead = document.createElement("thead");
+        var tr = document.createElement("tr");
+        tr.id = "head";
+
+        for(j in data[0])
+        {
+          var td = document.createElement("th");
+          td.id = "head" + "-" +j;
+          td.className = "head" + j.toString();
+          td.name = j.toString();
+          td.appendChild(document.createTextNode(j));
+          tr.appendChild(td);
+        }
+        thead.appendChild(tr);
+        table.appendChild(thead);
+      }
+      //항목별 내용추가
+      for(var i=0; i<data.lenght; i++){
+        var tr = document.createElement("tr");
+        tr.id = name + "_" + data[i].id;
+        for(j in data[i]){
+          td.id = tr.id + "_" + j;
+          td.className = j.toString();
+          td.appendChild(document.createTextNode(data[i][j]))
+          tr.appendChild(td);
+        }
+        table.tBodies[0].appendChild(tr);
+      }
+    }</script>
+    <script type="text/javascript">
+      JSON2Table(document.getElementByld("listTable"),"list",jdata);
+    </script>
+      <p>
+        <%= result %>
+      </p>
+      <table id="listTable"></table>
+
+
+  </body>
+</html>

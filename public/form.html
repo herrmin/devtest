@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Order Admin</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      tabledata = eval("result");
+      JSON2Table(document.getElementByld("listTable"),"list",tabledata);
+    </script>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file"> upload
+      <input type="submit" name="submit" value="Upload">
+    </form>
+    <button type="button" name="ajaxsend">전송</button>
+    <script>
+      document.querySelector('.ajaxsend').addEventListener('click', function(){
+        var inputdata = document.forms[0].elements[0].value;
+        sendAjax('http://localhost:3000/ajax_send', inputdata);
+      });
+    </script>
+    <table id="listTable">
+
+      </table>
+    <script src="script.js"></script>
+  </body>
+</html>
