@@ -9,7 +9,7 @@
       <input type="file" name="file" id='ufile' multiple>
       <button type="submit" id="uploadbtn">Upload</button>
     </form>
-    <div class="data">
+    <div class="result">
 
     </div>
 
@@ -41,6 +41,12 @@
           }
         };
         xhr.send(formData);
+        xhr.addEventListener('load', function(){
+          console.log(xhr.responseData);
+          //if(result.result !== "ok") return;
+          //document.querySelector(".result").innerHTML
+          //document.querySelector(".result").innerHTML
+        });
       };
 
     </script>
