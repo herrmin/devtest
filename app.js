@@ -75,7 +75,7 @@ var fs          = require('fs');
         });
     });
     app.get('/',function(req,res){
-    res.sendFile(__dirname + "/public/form.html");
+    res.sendFile(__dirname + "/public/upload.html");
     });
 
     app.post('/ajx_upload', function(req,res){
